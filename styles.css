@@ -1,0 +1,15 @@
+#grid-container {
+  width: 960px;
+  height: 960px;
+  background-color: aqua;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  background-color: red;
+}
+
+.box:hover {
+  background-color: aqua;
+}
