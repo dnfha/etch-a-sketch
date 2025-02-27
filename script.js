@@ -18,6 +18,7 @@ function createGrid(gridSize = 16) {
     boxSize = 960 / cols;
     box.style.minWidth = `${boxSize}px`;
     box.style.minHeight = `${boxSize}px`;
+    box.style.opacity = 0;
     gridContainer.appendChild(box);
   }
 
@@ -29,6 +30,10 @@ function clearGrid() {
   boxes.forEach((box) => {
     box.remove();
   });
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
 
 document.addEventListener("DOMContentLoaded", createGrid());
@@ -49,8 +54,14 @@ button.addEventListener("click", () => {
 gridContainer.addEventListener("mouseenter", () => {
   const boxes = document.querySelectorAll(".box");
   boxes.forEach((box) => {
-    box.addEventListener("mouseout", (e) => {
-      e.target.classList.add("colored");
+    box.addEventListener("mouseover", (e) => {
+      let r = getRandomInt(256);
+      let g = getRandomInt(256);
+      let b = getRandomInt(256);
+      if (e.target.style.opacity < 1) {
+        e.target.style.opacity = parseFloat(e.target.style.opacity) + 0.1;
+      }
+      e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     });
   });
 });

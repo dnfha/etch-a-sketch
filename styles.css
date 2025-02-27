@@ -10,10 +10,6 @@
   flex-wrap: wrap;
 }
 
-.colored {
-  background-color: #333;
-}
-
 #menu {
   width: 960px;
   display: flex;
