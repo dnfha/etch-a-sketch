@@ -1,15 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
 #grid-container {
   width: 960px;
   height: 960px;
-  background-color: aqua;
+  background-color: whitesmoke;
   display: flex;
   flex-wrap: wrap;
 }
 
-.box {
-  background-color: red;
+.colored {
+  background-color: #333;
 }
 
-.colored {
-  background-color: aqua;
+#menu {
+  width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: aquamarine;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: cadetblue;
+  color: #eee;
 }
