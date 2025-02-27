@@ -14,4 +14,12 @@ function createGrid(gridCount = 16) {
   }
 }
 
-document.addEventListener("onload", createGrid(16));
+document.addEventListener("DOMContentLoaded", createGrid(32));
+
+const boxes = document.querySelectorAll(".box");
+
+boxes.forEach((box) => {
+  box.addEventListener("mouseout", (e) => {
+    e.target.classList.add("colored");
+  });
+});
